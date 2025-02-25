@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Assets/CSS/style.css">
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <title>Page Accueil Brief Projet2</title>
+</head>
+<body>  <!--Debut du body-->
+
+    <header class="bg-white flex justify-between items-center w-full px-12 py-2">    <!--Debut du Header-->
+        <div>
+            <img  class="w-25 h-7" src="Assets/images/Logo.png" alt="">
+        </div>
+        <div class="flex gap-5">
+            <div>
+                <button class="border-1 border-[#FFC500] hover:bg-[#FFC500] text-black text-xs font-bold py-1 px-4 rounded">Connexion</button>
+            </div>
+            <div>
+                <button class="bg-blue-500 hover:bg-[#FFC500] text-white text-xs font-bold py-1 px-4 rounded">Creer un CV</button>
+            </div>   
+        </div>
+    </header>   <!--Fin du Header-->
+
+
+    <main>      <!--Debut du contenu main-->
+
+        <section class="bg-[#E6F2FF] px-12 py-1 w-full flex gap-10 items-center">    <!--Debut de la section 1-->
+
+            <div class="w-1/2 flex items-center justify-center min-h-screen">
+                <div class="relative w-full max-w-2xl overflow-hidden">
+                    <div class="flex w-full carousel gap-2">
+                        <img src="Assets/images/Slide1.png" class="w-full flex-shrink-0">
+                        <img src="Assets/images/slide2.png" class="w-full flex-shrink-0">
+                        <img src="Assets/images/slide3.png" class="w-full flex-shrink-0">
+                    </div>
+                </div>
+            </div>
+
+            <div class="w-1/2 ">
+                <h1 class="font-bold text-3xl">Créer votre CV professionnnel en quelque minute</h1>
+                <p class="my-10">Remplissez un formulaire, Choisissez un model et téléchargez votre CV en quelques minute gratuitement</p>
+                <div>
+                    <button class="bg-blue-500 hover:bg-[#FFC500] text-white text-xm font-bold py-1 px-4 rounded-2xl">Creer un CV</button>
+                </div>    
+            </div>
+        </section>      <!--Fin de la section 1-->
+
+        <section class="bg-white px-12 py-10  w-full">       <!--Debut de la section 2-->
+            <h1 class="text-center text-2xl font-bold">Comment ca marche ?</h1>
+            <div class="my-10 flex gap-10 justify-between">
+
+                <div>
+                    <img src="Assets/images/step-2-image.png" class="w-70 h-70" alt="">
+                    <div class="flex gap-5 items-center py-5">
+                        <img src="Assets/images/numero 1.png" class="w-7" alt="">
+                        <p class="text-xm font-bold">Personalisez votre CV</p>
+                    </div>
+                    <p>Remplissez chaque section de votre CV en vous appuyant sur notre contenu prérédigé, vous pouvez ajouter des champs selon votre convenance</p>
+                </div>
+
+                <div>
+                    <img src="Assets/images/step-1-image.png" class="w-70 h-70" alt="">
+                    <div class="flex gap-5 items-center py-5">
+                        <img src="Assets/images/numero 2.png" class="w-7" alt="">
+                        <p class="text-xm font-bold">Choisissez votre CV</p>
+                    </div>
+                    <p>Sélectionnez votre modèle dans notre bibliothèque de CV à créer, puis personnalisez la mise en forme à votre guise !</p>
+                </div>
+
+                <div>
+                    <img src="Assets/images/step-3-image.png" class="w-90 h-70" alt="">
+                    <div class="flex gap-5 items-center py-5">
+                        <img src="Assets/images/numero 3.png" class="w-7" alt="">
+                        <p class="text-xm font-bold">Téléchargez votre CV</p>
+                    </div>
+                    <p>Téléchargez votre curriculum vitae au format PDF, Word, PNG ou SVG. Il ne vous reste plus qu'à postuler !</p>
+                </div>
+            </div>
+            <div class="flex justify-center">
+                <button class="bg-blue-500 hover:bg-[#FFC500] text-white text-xm font-bold py-1 px-4 rounded-2xl">Creer un CV</button>
+            </div>
+
+        </section>      <!--Fin de la section 2-->
+
+        <section class="bg-[#004A99] px-12 py-10 w-full text-center  text-white">       <!--Debut de la section 3-->
+            <h1 class=" text-2xl font-bold">Nos modeles de CV</h1>
+            <p class="py-5">Choississez parmi une selection de modele de CV prefessionnels</p>
+
+            <div class="w-full max-w-6xl relative">
+                <div class="relative overflow-hidden">
+                    <div id="carousel" class="flex transition-transform duration-500 ease-in-out">
+                        <!-- Carte 1 -->
+                        <div class="flex-shrink-0 w-1/3 px-4">
+                            <div class="relative group">
+                                <img src="Assets/images/c1.jpeg" class="w-full">
+                                <button class=" bg-[#007BFF] absolute inset-0 text-[#FFC500]  text-lg font-bold opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                                    Utiliser ce modèle
+                                </button>
+                            </div>
+                        </div>
+                        <!-- Carte 2 -->
+                        <div class="flex-shrink-0 w-1/3 px-4">
+                            <div class="relative group">
+                                <img src="Assets/images/c2.jpeg" class="w-full">
+                                <button class=" bg-[#007BFF] absolute inset-0 text-[#FFC500]  text-lg font-bold opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                                    Utiliser ce modèle
+                                </button>
+                            </div>
+                        </div>
+                        <!-- Carte 3 -->
+                        <div class="flex-shrink-0 w-1/3 px-4">
+                            <div class="relative group">
+                                <img src="Assets/images/c3.jpeg" class="w-full">
+                                <button class=" bg-[#007BFF] absolute inset-0 text-[#FFC500]  text-lg font-bold opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                                    Utiliser ce modèle
+                                </button>
+                            </div>
+                        </div>
+                        <!-- Carte 4 -->
+                        <div class="flex-shrink-0 w-1/3 px-4">
+                            <div class="relative group">
+                                <img src="Assets/images/c4.jpeg" class="w-full">
+                                <button class=" bg-[#007BFF] absolute inset-0 text-[#FFC500]  text-lg font-bold opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                                    Utiliser ce modèle
+                                </button>
+                            </div>
+                        </div>
+                        <!-- Carte 5 -->
+                        <div class="flex-shrink-0 w-1/3 px-4">
+                            <div class="relative group">
+                                <img src="Assets/images/c5.jpeg" class="w-full">
+                                <button class=" bg-[#007BFF] absolute inset-0 text-[#FFC500]  text-lg font-bold opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                                    Utiliser ce modèle
+                                </button>
+                            </div>
+                        </div>
+                        <!-- Carte 6 -->
+                        <div class="flex-shrink-0 w-1/3 px-4">
+                            <div class="relative group">
+                                <img src="Assets/images/c6.jpeg" class="w-full">
+                                <button class=" bg-[#007BFF] absolute inset-0 text-[#FFC500]  text-lg font-bold opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                                    Utiliser ce modèle
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Carte 7 -->
+                        <div class="flex-shrink-0 w-1/3 px-4">
+                            <div class="relative group">
+                                <img src="Assets/images/c7.jpeg" class="w-full">
+                                <button class=" bg-[#007BFF] absolute inset-0 text-[#FFC500]  text-lg font-bold opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                                    Utiliser ce modèle
+                                </button>
+                            </div>
+                        </div>
+                        <!-- Carte 8 -->
+                        <div class="flex-shrink-0 w-1/3 px-4">
+                            <div class="relative group">
+                                <img src="Assets/images/c8.jpeg" class="w-full">
+                                <button class=" bg-[#007BFF] absolute inset-0 text-[#FFC500]  text-lg font-bold opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                                    Utiliser ce modèle
+                                </button>
+                            </div>
+                        </div>
+                        <!-- Carte 9 -->
+                        <div class="flex-shrink-0 w-1/3 px-4">
+                            <div class="relative group">
+                                <img src="Assets/images/c9.jpeg" class="w-full">
+                                <button class=" bg-[#007BFF] absolute inset-0 text-[#FFC500]  text-lg font-bold opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                                    Utiliser ce modèle
+                                </button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+        
+                <!-- Boutons de navigation -->
+                <button id="prev" class="absolute left-0 top-1/2 transform -translate-y-1/2 bg-yellow-500 text-white p-3 rounded-full shadow-lg">&#10094;</button>
+                <button id="next" class="absolute right-0 top-1/2 transform -translate-y-1/2 bg-yellow-500 text-white p-3 rounded-full shadow-lg">&#10095;</button>
+            </div>
+
+            </div>
+
+        </section>      <!--Fin de la section 3-->
+
+        <section class="bg-white px-12 py-10  w-full">       <!--Debut de la section 4-->
+
+            <h1 class="text-center text-2xl font-bold">Ce que disent nos utilisateurs</h1>
+
+            <!-- Témoignage Card -->
+            <div class="relative bg-white p-8 rounded-lg shadow-lg my-8">
+                <!-- Témoignages -->
+                <div class="overflow-hidden relative">
+                    <div id="testimonialCarousel" class="flex transition-transform duration-500 ease-in-out">
+                        <!-- Témoignage 1 -->
+                        <div class="w-full flex-shrink-0 text-center px-12">
+                            <img src="Assets/images/team1.png" class="w-20 h-20 rounded-full mx-auto mb-4">
+                            <p class="text-lg italic">
+                                "Grâce à cette plateforme, j'ai pu créer un CV professionnel en quelques minutes ! Les modèles sont modernes et adaptés aux recruteurs. J'ai enfin décroché mon premier emploi !"
+                            </p>
+                            <h3 class="font-bold text-lg mt-4">Jean-Pierre L</h3>
+                            <p class="text-gray-500">Étudiant en marketing</p>
+                            <div class="flex justify-center mt-2">
+                                <span class="text-yellow-400 text-xl">★★★★★</span>
+                            </div>
+                        </div>
+                        <!-- Témoignage 2 -->
+                        <div class="w-full flex-shrink-0 text-center px-12">
+                            <img src="Assets/images/team2.png" class="w-20 h-20 rounded-full mx-auto mb-4">
+                            <p class="text-lg italic">
+                                "Après des années dans le même domaine, je voulais changer de carrière. Cette application m'a aidé à restructurer mon CV de manière claire et impactante. Résultat : j'ai trouvé un nouveau poste en un mois !"
+                            </p>
+                            <h3 class="font-bold text-lg mt-4">Jonhson William</h3>
+                            <p class="text-gray-500">Ancien technicien devenu chef de projet IT</p>
+                            <div class="flex justify-center mt-2">
+                                <span class="text-yellow-400 text-xl">★★★★★</span>
+                            </div>
+                        </div>
+                        <!-- Témoignage 3 -->
+                        <div class="w-full flex-shrink-0 text-center px-12">
+                            <img src="Assets/images/team3.png" class="w-20 h-20 rounded-full mx-auto mb-4">
+                            <p class="text-lg italic">
+                                "En tant que recruteur, je vois trop de CV mal organisés. Cette plateforme simplifie la vie des candidats en leur proposant des mises en page attractives et optimisées. Un vrai gain de temps pour tout le monde !"
+                            </p>
+                            <h3 class="font-bold text-lg mt-4">Jonhson William</h3>
+                            <p class="text-gray-500">Responsable RH chez TechSolutions</p>
+                            <div class="flex justify-center mt-2">
+                                <span class="text-yellow-400 text-xl">★★★★★</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Boutons de navigation -->
+                <button id="testimonialPrev" class="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white border border-blue-600 text-blue-600 p-3 rounded-full shadow-lg">
+                    &#8592;
+                </button>
+                <button id="testimonialNext" class="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white border border-blue-600 text-blue-600 p-3 rounded-full shadow-lg">
+                    &#8594;
+                </button>
+
+                    <!-- Indicateurs -->
+                <div class="flex justify-center space-x-2 mt-4">
+                    <div class="testimonial-dot h-2 w-10 bg-[#007BFF] rounded-full"></div>
+                    <div class="testimonial-dot h-2 w-10 bg-[#007BFF] rounded-full"></div>
+                    <div class="testimonial-dot h-2 w-10 bg-[#007BFF] rounded-full"></div>
+                </div>
+            </div>
+
+        </section>      <!--Fin de la section 4-->
+
+        <section class="bg-[#E6F2FF] px-12 py-10  w-full text-center">       <!--Debut de la section 5-->
+
+            <h1 class=" text-2xl font-bold">Nous contacter</h1>
+            <p class="py-3">Vous avez une dificulté ou une suggetion ? Contactez-nous dès maintenant pour une solution sur mesure.</p>
+
+            <div class="flex justify-center items-center min-h-screen bg-white rounded-lg shadow-lg py-10 my-10">
+                
+                    <!-- Image à gauche -->
+                    <div class="w-1/2 flex justify-center items-center relative">
+                        <img src="Assets/images/form.jpg" alt="Illustration" class="w-3/4">
+                    </div>
+            
+                    <!-- Formulaire à droite -->
+                    <div class="w-1/2">
+                        <form class="space-y-4 px-15">
+                            <input type="text" placeholder="Nom" class="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            <input type="email" placeholder="E-mail" class="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            <input type="text" placeholder="Sujet" class="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            <input type="text" placeholder="Message" class="w-full p-3 h-32 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            
+                            <!-- Bouton -->
+                            <button class="bg-yellow-500 text-white font-bold py-3 px-6 rounded-lg shadow-lg hover:bg-[#007BFF] transition w-full">
+                                Envoyer
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            
+        </section>      <!--Fin de la section 5-->
+
+    </main>     <!--Fin du contenu main-->
+
+
+    <!--Debut du Footer-->
+    <footer class="bg-[#062B57] text-white py-10">
+        <div class="container mx-auto px-10 flex flex-wrap justify-between items-start">
+            
+            <!-- Colonne 1 : Logo et liens -->
+            <div class="w-full md:w-1/4 mb-6 md:mb-0">
+                <img src="Assets/images/Projet 2 - logo webnova SL 1.png" alt="Logo" class="w-16 mb-4">
+                <ul class="space-y-2 text-gray-300">
+                    <li><a href="#" class="hover:text-gray-300">Qui sommes-nous</a></li>
+                    <li><a href="#" class="hover:text-gray-300">Conditions générales</a></li>
+                    <li><a href="#" class="hover:text-gray-300">Questions fréquentes</a></li>
+                    <li><a href="#" class="hover:text-gray-300">Avis des utilisateurs</a></li>
+                </ul>
+            </div>
+    
+            <!-- Colonne 2 : CV -->
+            <div class="w-full md:w-1/4 mb-6 md:mb-0">
+                <h3 class="font-bold mb-3">CV</h3>
+                <ul class="space-y-2 text-gray-300">
+                    <li><a href="#" class="hover:text-gray-300">Générateur de CV</a></li>
+                    <li><a href="#" class="hover:text-gray-300">Modèles de CV</a></li>
+                    <li><a href="#" class="hover:text-gray-300">Comment faire un CV</a></li>
+                    <li><a href="#" class="hover:text-gray-300">Exemples de CV</a></li>
+                </ul>
+            </div>
+    
+            <!-- Colonne 3 : Contact -->
+            <div class="w-full md:w-1/4 mb-6 md:mb-0">
+                <h3 class="font-bold mb-3">Contact</h3>
+                <div class="text-gray-300">
+                    <p>contact@webnew.com</p>
+                    <p>+237 656 585 444</p>
+                    <p>Douala - Cameroun</p>
+                </div>
+    
+                <!-- Icônes réseaux sociaux -->
+                <div class="flex space-x-3 w-40 mt-4">
+                    <a href="#"><img src="Assets/images/Facebook.png" alt=""></a>
+                    <a href="#"><img src="Assets/images/LinkedIn.png" alt=""></a>
+                    <a href="#"><img src="Assets/images/Twitter.png" alt=""></a>
+                    <a href="#"><img src="Assets/images/Instagram.png" alt=""></a>
+                </div>
+            </div>
+        </div>
+    
+        <!-- Copyright -->
+        <div class="text-center text-sm text-gray-300 mt-8">
+            ©2025 webnova. All rights reserved | Designed by <span class="text-yellow-400 font-bold">Marcel créa</span>
+        </div>
+    
+    </footer>   <!--Fin du Footer-->
+
+    <script src="JavaScript/index.js"></script>
+</body>
+</html>
