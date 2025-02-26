@@ -1,0 +1,109 @@
+ <!DOCTYPE html>
+    <html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Web nova - Créateur de CV</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+    </head>
+
+    <body class="flex w-full h-screen">
+        <!-- Sidebar navigation - dark blue background -->
+        <div class="w-1/4 bg-blue-900 flex flex-col items-center p-8">
+            <!-- Logo section -->
+            <div class="mb-16">
+                <img src="Assets/images/Logo2.png" alt="">
+            </div>
+            
+            <!-- Navigation buttons -->
+            <div class="w-full space-y-4">
+                <button class="w-full border border-white text-white rounded-full py-2 px-4 flex items-center justify-center">
+                    <span class="mr-2">+</span> Nouveau
+                </button>
+                <button class="w-full border border-white text-white rounded-full py-2 px-4">
+                    Accueil
+                </button>
+                <button class="w-full border border-white text-white rounded-full py-2 px-4">
+                    Contact
+                </button>
+            </div>
+            
+            <!-- Logout button at bottom -->
+            <div class="mt-auto w-full ">
+                <button class="w-full border border-white text-white rounded-full py-2 px-4 mb-4">
+                    Déconnexion
+                </button>
+            </div>
+        </div>
+        
+        <!-- Main content area -->
+        <div class="w-3/4 bg-white">
+            <!-- Header -->
+            <div class="flex justify-between items-center p-4 border-b">
+                <button class="flex items-center">
+                    <div class="bg-black text-white rounded-full p-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+                        </svg>
+                    </div>
+                    <span class="ml-2 text-lg">Retour</span>
+                </button>
+                
+                <div class="flex items-center">
+                    <span class="mr-2">Rachel AZONKEU</span>
+                    <div class="bg-gray-200 h-8 w-8 rounded-full"></div>
+                </div>
+            </div>
+            
+            <!-- Projects content -->
+            <div class="mb-100">
+                <h1 class="text-3xl font-bold mb-8">Mes projets</h1>
+                
+                <!-- CV Grid -->
+                <div class="grid grid-cols-3 gap-6">
+                    <!-- Create new CV card -->
+                    <div class="border border-gray-300 border-dashed flex flex-col items-center justify-center p-8 h-[440px]">
+                        <p class="mb-4">Créer un nouveau CV</p>
+                        <span class="text-blue-500 text-3xl">+</span>
+                    </div>
+                    
+                    <!-- Blue CV Template -->
+                    <div class="border border-gray-300 border-dashed p-2 h-64">
+                        <div class="h-full w-full relative">
+                            <img src="Assets/images/t2.jpeg" alt="">
+                        </div>
+                        <div class="mt-2">
+                            <p class="font-bold">CV sans titre</p>
+                            <p class="text-sm text-gray-500">Modifié il y'a 2heures</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Minimal CV Template -->
+                    <div class="border border-gray-300 border-dashed p-2 h-64">
+                        <div class="h-full w-full relative">
+                            <img src="Assets/images/t1.jpeg" alt="">
+                        </div>
+                        <div class="mt-2">
+                            <p class="font-bold">CV sans titre</p>
+                            <p class="text-sm text-gray-500">Modifié il y'a 2heures</p>
+                        </div>
+                    </div>
+
+                     <!-- Minimal CV Template -->
+                     <div class="border border-gray-300 border-dashed p-2 h-64">
+                        <div class="h-full w-full relative">
+                            <img src="Assets/images/t3.jpeg" alt="">
+                        </div>
+                        <div class="mt-2">
+                            <p class="font-bold">CV sans titre</p>
+                            <p class="text-sm text-gray-500">Modifié il y'a 2heures</p>
+                        </div>
+                    </div>
+                    
+                   
+                    
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
