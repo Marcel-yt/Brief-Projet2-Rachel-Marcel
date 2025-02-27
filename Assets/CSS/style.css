@@ -1,3 +1,5 @@
+/* Carrousel page Accueil section 1 */
+
 @import "tailwindcss";
 
 @keyframes slide {
@@ -10,3 +12,6 @@
 .carousel {
     animation: slide 10s infinite;
 }
+
+/* CSS page Generateur de CV */
+

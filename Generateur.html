@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.js"></script>
+    
+    <title>Generateur de CV</title>
+</head>
+<body>
+    
+    <header class="bg-white flex justify-between items-center w-full px-12 py-2">    <!--Debut du Header-->
+        <div>
+            <img  class="w-21 h-7 hover:bg-[#FFC500] rounded-xl" src="Assets/images/retour.png" alt="">
+        </div>
+        <div class="flex gap-5">
+            <div>
+                <button class="border-1 border-[#FFC500] hover:bg-[#FFC500] text-black text-xs font-bold py-1 px-4 rounded">Tableau de bord</button>
+            </div>
+            <div>
+                <button id="downloadCV" class="mt- bg-blue-500 hover:bg-[#FBBF19] text-white text-xs font-bold py-1 px-4 rounded">Télécharger le CV</button>
+            </div>   
+        </div>
+    </header>   <!--Fin du Header-->
+
+    <main>
+
+        <div class="bg-[#E6F2FF] px-6 py-3">
+            <div class="max-w-5xl mx-auto grid grid-cols-2 gap-4">
+                <!-- Formulaire -->
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <h2 class="text-xl font-bold mb-4">Veillez remplir les champs suivants</h2>
+
+                    <!-- Informations personnelles -->
+                    <details class="mb-4">
+                        <summary class="cursor-pointer text-lg font-semibold">Informations personnelles</summary>
+                        <div class="mt-2">
+                            <label class="block text-sm font-semibold">Profil</label>
+                            <input type="file" id="profil" class="w-full p-2 border rounded mb-3" accept="image/*">
+
+                            <label class="block text-sm font-semibold">Nom :</label>
+                            <input type="text" id="name" class="w-full p-2 border rounded mb-3" placeholder="Votre nom">
+
+                            <label class="block text-sm font-semibold">Titre :</label>
+                            <input type="text" id="titre" class="w-full p-2 border rounded mb-3" placeholder=" Votre Titre">
+                            
+                            <label class="block text-sm font-semibold">Téléphone :</label>
+                            <input type="tel" id="phone" class="w-full p-2 border rounded mb-3" placeholder="Votre téléphone">
+
+                            <label class="block text-sm font-semibold">Email :</label>
+                            <input type="email" id="email" class="w-full p-2 border rounded mb-3" placeholder="Votre email">
+            
+                            <label class="block text-sm font-semibold">Address :</label>
+                            <input type="text" id="address" class="w-full p-2 border rounded mb-3" placeholder="Votre address exp : Douala, Cameroun">
+            
+                            <label class="block text-sm font-semibold">Site internet :</label>
+                            <input type="url" id="website" class="w-full p-2 border rounded mb-3" placeholder="Address de votre site internet">
+                        </div>
+                    </details>
+
+                    <!-- Profil -->
+                    <details class="mb-4">
+                        <summary class="cursor-pointer text-lg font-semibold">Profil</summary>
+                        <div class="mt-2">
+                            <textarea id="experience" class="w-full p-2 border rounded mb-3" placeholder="Décrivez votre profil"></textarea>
+                        </div>
+                    </details>
+
+                    <!-- Competences -->
+                    <details class="mb-4">
+                        <summary class="cursor-pointer text-lg font-semibold">Compétences</summary>
+                        <div class="mt-2">
+                            <div id="skillsContainer">
+                                <div class="skill-item mb-3">
+                                    <label class="block text-sm font-semibold">Compétence :</label>
+                                    <input type="text" class="skill-name w-full p-2 border rounded mb-2" placeholder="Ex: HTML, CSS, JavaScript">
+                                    <label class="block text-sm font-semibold">Niveau :</label>
+                                    <input type="range" class="skill-level w-full" min="0" max="100" value="50">
+                                </div>
+                            </div>
+                            <button id="addSkill" class="mt-2 w-full bg-green-500 text-white p-2 rounded">Ajouter une compétence</button>
+                        </div>
+                    </details>
+
+
+                    <!-- Education -->
+                    <details class="mb-4">
+                        <summary class="cursor-pointer text-lg font-semibold">Education</summary>
+                        <div class="mt-2" id="educationContainer">
+                            <div class="education-item mb-3">
+                                <label class="block text-sm font-semibold">École :</label>
+                                <input type="text" class="education-name w-full p-2 border rounded mb-2" placeholder="Nom de l'école">
+                                <label class="block text-sm font-semibold">Période :</label>
+                                <input type="text" class="education-period w-full p-2 border rounded mb-2" placeholder="2000-2005">
+                                <label class="block text-sm font-semibold">Description :</label>
+                                <textarea class="education-description w-full p-2 border rounded mb-2" placeholder="Description"></textarea>
+                            </div>
+                        </div>
+                        <button id="addEducation" class="mt-2 w-full bg-green-500 text-white p-2 rounded">Ajouter une éducation</button>
+                    </details>
+
+
+                    <!-- Experience -->
+                    <details class="mb-4">
+                        <summary class="cursor-pointer text-lg font-semibold">Expérience</summary>
+                        <div class="mt-2" id="experienceContainer">
+                            <div class="experience-item mb-3">
+                                <label class="block text-sm font-semibold">Entreprise :</label>
+                                <input type="text" class="experience-name w-full p-2 border rounded mb-2" placeholder="Nom de l'entreprise">
+                                <label class="block text-sm font-semibold">Période :</label>
+                                <input type="text" class="experience-period w-full p-2 border rounded mb-2" placeholder="2010-2012">
+                                <label class="block text-sm font-semibold">Description :</label>
+                                <textarea class="experience-description w-full p-2 border rounded mb-2" placeholder="Description"></textarea>
+                            </div>
+                        </div>
+                        <button id="addExperience" class="mt-2 w-full bg-green-500 text-white p-2 rounded">Ajouter une expérience</button>
+                    </details>
+
+                    <button id="downloadCV" class="mt-4 w-full bg-blue-500 hover:bg-[#FBBF19] text-white font-bold p-2 rounded">Télécharger le CV</button>
+                </div>
+        
+                <!-- Prévisualisation -->
+
+                
+                <div id="telecv" class=" bg-white rounded-lg shadow-lg">
+                    <!-- En tete du cv -->
+                    <div class="flex items-center py-5 bg-[#007BFF] p-6">   
+                        <img id="previewProfil" src=" " alt="Profile" class="w-24 h-24 rounded-full object-cover border mr-4">
+                        <div>
+                            <h1 id="previewName" class="text-3xl text-[#FFFFFF] font-bold break-words"></h1>
+                            <p id="previewTitre" class="text-gray-300 uppercase tracking-wide break-words"></p>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-2 gap-6 p-6">
+                         <!-- Colonne 1 du cv -->
+                        <div>
+                            <h2 class="font-bold text-lg border-b-[5px] border-b-[#007BFF] pb-2 break-words">PROFILE</h2>
+                            <p id="previewExperience" class="text-gray-600 mt-2 text-sm break-words"></p>
+                            <h2 class="font-bold text-lg border-b-[5px] border-b-[#007BFF] pb-2 mt-4 break-words">COMPETENCES</h2>
+                            <ul id="previewSkills" class="mt-2 text-sm text-gray-600 break-words"></ul>
+                            <h2 class="font-bold text-lg border-b-[5px] border-b-[#007BFF] pb-2 mt-4 break-words">CONTACT</h2>
+                            <p class="text-sm mt-2"><span class="font-bold break-words">Phone:</span> <br> <span id="previewPhone"></span></p>
+                            <p class="text-sm"><span class="font-bold break-words">Email:</span> <br> <span id="previewEmail"></span></p>
+                            <p class="text-sm"><span class="font-bold break-words">Address:</span> <br> <span id="previewAddress"></span></p>
+                            <p class="text-sm"><span class="font-bold break-words">Site internet:</span> <br> <span id="previewWebsite"></span></p>
+                        </div>
+
+
+                        <!-- Colonne 2 du cv -->
+                        <div>
+                            <h2 class="font-bold text-lg border-b-[5px] border-b-[#007BFF] pb-2">EDUCATION</h2>
+                            <ul id="previewEducation" class="mt-2 text-sm text-gray-600 break-words"></ul>
+                            
+                            <h2 class="font-bold text-lg border-b-[5px] border-b-[#007BFF] pb-2 mt-4">EXPERIENCE</h2>
+                            <ul id="previewExperienceList" class="mt-2 text-sm text-gray-600 break-words"></ul>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--Debut du Footer-->
+<footer class="bg-[#062B57] text-white py-10">
+    <div class="container mx-auto px-10 flex flex-wrap justify-between items-start">
+        
+        <!-- Colonne 1 : Logo et liens -->
+        <div class="w-full md:w-1/4 mb-6 md:mb-0">
+            <img src="Assets/images/Projet 2 - logo webnova SL 1.png" alt="Logo" class="w-16 mb-4">
+            <ul class="space-y-2 text-gray-300">
+                <li><a href="#" class="hover:text-gray-300">Qui sommes-nous</a></li>
+                <li><a href="#" class="hover:text-gray-300">Conditions générales</a></li>
+                <li><a href="#" class="hover:text-gray-300">Questions fréquentes</a></li>
+                <li><a href="#" class="hover:text-gray-300">Avis des utilisateurs</a></li>
+            </ul>
+        </div>
+
+        <!-- Colonne 2 : CV -->
+        <div class="w-full md:w-1/4 mb-6 md:mb-0">
+            <h3 class="font-bold mb-3">CV</h3>
+            <ul class="space-y-2 text-gray-300">
+                <li><a href="#" class="hover:text-gray-300">Générateur de CV</a></li>
+                <li><a href="#" class="hover:text-gray-300">Modèles de CV</a></li>
+                <li><a href="#" class="hover:text-gray-300">Comment faire un CV</a></li>
+                <li><a href="#" class="hover:text-gray-300">Exemples de CV</a></li>
+            </ul>
+        </div>
+
+        <!-- Colonne 3 : Contact -->
+        <div class="w-full md:w-1/4 mb-6 md:mb-0">
+            <h3 class="font-bold mb-3">Contact</h3>
+            <div class="text-gray-300">
+                <p>contact@webnew.com</p>
+                <p>+237 656 585 444</p>
+                <p>Douala - Cameroun</p>
+            </div>
+
+            <!-- Icônes réseaux sociaux -->
+            <div class="flex space-x-3 w-40 mt-4">
+                <a href="#"><img src="Assets/images/Facebook.png" alt=""></a>
+                <a href="#"><img src="Assets/images/LinkedIn.png" alt=""></a>
+                <a href="#"><img src="Assets/images/Twitter.png" alt=""></a>
+                <a href="#"><img src="Assets/images/Instagram.png" alt=""></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Copyright -->
+    <div class="text-center text-sm text-gray-300 mt-8">
+        ©2025 webnova. All rights reserved | Designed by <span class="text-yellow-400 font-bold">Marcel créa</span>
+    </div>
+
+</footer>   <!--Fin du Footer-->
+                        
+    </main>
+
+
+
+    <!-- Fonction javascript qui permet de télécharger le CV -->
+    <script type="text/javascript">
+        document.getElementById('downloadCV').addEventListener('click', function() {
+            const cv = document.getElementById('telecv');
+            const opt = {
+                margin: 1,
+                filename: 'CV.pdf',
+                image: { type: 'jpeg', quality: 0.98 },
+                html2canvas: { scale: 2 },
+                jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
+            };
+            html2pdf().from(cv).set(opt).save();
+        });
+
+    </script>
+
+
+   <script src="JavaScript/Generateur.js"></script> 
+</body>
+</html>
